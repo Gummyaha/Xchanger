@@ -10,7 +10,7 @@
     <string-array name="currency">
         <item>DKK</item>
         <item>USD</item>
-        <item>TH</item>
+        <item>THB</item>
 
     </string-array>
 </resources>
