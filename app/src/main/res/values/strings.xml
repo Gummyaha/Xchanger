@@ -7,4 +7,10 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="unit" />
+    <string-array name="currency">
+        <item>DKK</item>
+        <item>USD</item>
+        <item>THB</item>
+
+    </string-array>
 </resources>
