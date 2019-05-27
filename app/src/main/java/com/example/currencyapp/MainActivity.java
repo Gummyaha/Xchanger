@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.AddFragment(new FragmentConvert(),"Converter");
         adapter.AddFragment(new FragmentRates(),"Exchange Rates");
-        adapter.AddFragment(new FragmentSettings(),"Settings");
+        //adapter.AddFragment(new FragmentSettings(),"Settings");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

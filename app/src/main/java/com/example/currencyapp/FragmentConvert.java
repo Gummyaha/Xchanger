@@ -46,7 +46,7 @@ public class FragmentConvert extends Fragment {
             @Override
             public void onClick(View v) {
                 //make your toast here
-                Get_Curreny();
+                Get_Currency();
             }
         });
 
@@ -116,7 +116,7 @@ public class FragmentConvert extends Fragment {
         // Do something in response to button
     }
 
-    void Get_Curreny(){
+    void Get_Currency(){
 
         //test.setText(String.valueOf(url));
         JsonObjectRequest jur = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
