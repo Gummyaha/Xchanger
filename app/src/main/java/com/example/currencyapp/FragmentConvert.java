@@ -21,13 +21,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
+//import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 
 public class FragmentConvert extends Fragment {
-    String currency_url ="https://api.exchangeratesapi.io/latest?base=",url,from_currency;
+    String currency_url ="https://api.exchangeratesapi.io/latest?base=",url,from_currency,currency_result_round;
     View view;
     TextView test,test2,test3,currency_display;
     Double currency_result,input;
@@ -94,7 +94,7 @@ public class FragmentConvert extends Fragment {
                 try {
 
                     from_currency =parentView.getItemAtPosition(position).toString();
-                    test3 = (TextView)getView().findViewById(R.id.textView8);
+                    test3 = (TextView)getView().findViewById(R.id.textView4);
                     test3.setText(String.valueOf(from_currency));
 
 
@@ -136,8 +136,9 @@ public class FragmentConvert extends Fragment {
                         input = Double.parseDouble(editText.getText().toString());
                     }
                     currency_result = input*temp;
+                    currency_result_round = String.format("%.2f", currency_result);
                     currency_display = (TextView)getView().findViewById(R.id.textView9);
-                    currency_display.setText(String.valueOf(currency_result));
+                    currency_display.setText(String.valueOf(currency_result_round));
 
                 }
                 catch (JSONException e){
