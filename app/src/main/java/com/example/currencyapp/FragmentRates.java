@@ -39,6 +39,7 @@ public class FragmentRates extends Fragment {
         view = inflater.inflate(R.layout.rates_fragment,container,false);
         return view;
 
+        //super.onCreate(savedInstanceState);
 
     }
 
