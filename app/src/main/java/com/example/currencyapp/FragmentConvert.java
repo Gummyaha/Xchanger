@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,13 +26,24 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 
 public class FragmentConvert extends Fragment {
-    String currency_url ="https://api.exchangeratesapi.io/latest?base=",url,from_currency;
+    String currency_url ="https://api.exchangeratesapi.io/latest?base=",url,from_currency,to_currency;
     View view;
     TextView test,test2,test3,currency_display;
     Double currency_result,input;
-    private Spinner dropdown1,dropdown2 ;
+    EditText editText;
+    int to_position,from_position;
+    public static Spinner dropdown1,dropdown2 ;
+    protected  AppDatabase db;
+
+
+
     public FragmentConvert() {
 
     }
@@ -45,17 +57,50 @@ public class FragmentConvert extends Fragment {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //make your toast here
                 Get_Curreny();
             }
         });
 
+        Button b2 = (Button) view.findViewById(R.id.button);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Swap_Curreny();
+            }
+        });
+
+        Button b3 = (Button) view.findViewById(R.id.button5);
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AddFavorite();
+            }
+        });
+
+        db = AppDatabase.getDatabase(getActivity());
+
+/*----------------------------TEST-------------------------------
+
+        ArrayList<String> places = new ArrayList<>(Arrays.asList("Buenos Aires", "Córdoba", "La Plata"));
+        String[] countryNames={"India","China","Australia","Portugle","America","New Zealand"};
+        places.add("list51");
+        String[] str = GetStringArray(places);
+
+        ArrayList<String> currency = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.currency)));
+        currency.add("list51");
+        String[] str_currency = GetStringArray(currency);
+
+----------------------------------------------------------------*/
+
         //---1st Dropdown
         dropdown1 = (Spinner) view.findViewById(R.id.spinner1);
-        ArrayAdapter<CharSequence> mSortAdapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, getResources()
-                .getStringArray(R.array.currency));
+
+        ArrayAdapter<CharSequence> mSortAdapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.currency));
         mSortAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropdown1.setAdapter(mSortAdapter);
+
+
+
 
         dropdown1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -63,10 +108,11 @@ public class FragmentConvert extends Fragment {
                                        View selectedItemView, int position, long id) {
                 try {
 
-                    String select_item =parentView.getItemAtPosition(position).toString();
+                    from_position=position;
+                    from_currency =parentView.getItemAtPosition(position).toString();
                     test = (TextView)getView().findViewById(R.id.textView3);
-                    test.setText(String.valueOf(select_item));
-                    url = currency_url+select_item;
+                    test.setText(String.valueOf(from_currency));
+                    url = currency_url+from_currency;
 
                 }
                 catch (Exception e) {
@@ -87,15 +133,17 @@ public class FragmentConvert extends Fragment {
         mSortAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropdown2.setAdapter(mSortAdapter2);
 
+
         dropdown2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView,
                                        View selectedItemView, int position, long id) {
                 try {
 
-                    from_currency =parentView.getItemAtPosition(position).toString();
-                    test3 = (TextView)getView().findViewById(R.id.textView8);
-                    test3.setText(String.valueOf(from_currency));
+                    to_position = position;
+                    to_currency =parentView.getItemAtPosition(position).toString();
+                    test3 = (TextView)getView().findViewById(R.id.textView4);
+                    test3.setText(String.valueOf(to_currency));
 
 
                 }
@@ -124,12 +172,17 @@ public class FragmentConvert extends Fragment {
             public void onResponse(JSONObject response) {
                 try {
                     JSONObject main_object = response.getJSONObject("rates");
-                    //JSONArray array = response.getJSONArray("weather");
+
+                    //delete
+                    //JSONArray array = response.getJSONArray("rate");
                     //JSONObject object = array.getJSONObject(0);
-                    Double temp = Double.valueOf(main_object.getDouble(from_currency));
-                    test2 = (TextView)getView().findViewById(R.id.textView7);
-                    test2.setText(String.valueOf(temp));
-                    EditText editText = (EditText)getView().findViewById(R.id.editText);
+                    Double temp = Double.valueOf(main_object.getDouble(to_currency));
+
+                    //delete
+                   // test2 = (TextView)getView().findViewById(R.id.textView7);
+                    //test2.setText(String.valueOf(temp));
+
+                    editText = (EditText)getView().findViewById(R.id.editText);
                     if (editText.getText().toString().trim().length() == 0) {
                         input=0.0;
                     }else{
@@ -154,6 +207,57 @@ public class FragmentConvert extends Fragment {
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
         queue.add(jur);
     }
+    void Swap_Curreny(){
+
+        test = (TextView)getView().findViewById(R.id.textView3);
+        test.setText(String.valueOf(to_currency));
+        dropdown1.setSelection(to_position);
+
+        test3 = (TextView)getView().findViewById(R.id.textView4);
+        test3.setText(String.valueOf(from_currency));
+        dropdown2.setSelection(from_position);
+
+        //editText.setText("0");
+
+
+    }
+
+    public static void set_curreny(int from,int to){
+
+       // test = (TextView)getView().findViewById(R.id.textView3);
+       // test.setText(String.valueOf(to_currency));
+        dropdown1.setSelection(from);
+
+        //test3 = (TextView)getView().findViewById(R.id.textView4);
+        //test3.setText(String.valueOf(from_currency));
+        dropdown2.setSelection(to);
+
+
+
+        //editText.setText("0");
+
+
+    }
+
+
+    private void AddFavorite() {
+        FavoriteCurrency favorite = new FavoriteCurrency();
+        //favorite.setFromCurrency(fromCurrency);
+       // favorite.setToCurrency(toCurrency);
+
+
+        favorite.from_currency = from_currency;
+        favorite.to_currency = to_currency;
+        favorite.from_currency_position = from_position;
+        favorite.to_currency_position = to_position;
+        db.favoriteCurrencyDao().insert(favorite);
+
+        //InsertData.onInsertProfile(getContext(), favorite, this);
+    }
+
+
+
+
 
 
 

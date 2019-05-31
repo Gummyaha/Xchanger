@@ -1,10 +1,19 @@
 package com.example.currencyapp;
 
+import android.provider.SyncStateContract;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,12 +31,15 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager_id);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        adapter.AddFragment(new FragmentConvert(),"Converter");
-        adapter.AddFragment(new FragmentRates(),"Exchange Rates");
-        adapter.AddFragment(new FragmentSettings(),"Settings");
+        adapter.AddFragment(new FragmentConvert(), "Converter");
+        adapter.AddFragment(new FavoriteListFragment(), "Favorite");
+        adapter.AddFragment(new FragmentRates(), "Exchange Rates");
+
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
     }
+
 }
+
