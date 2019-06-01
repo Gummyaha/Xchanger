@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/parent_layout">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/itemImage"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dummy"
+        android:id="@+id/itemText"
+        android:layout_toRightOf="@+id/itemImage"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:textSize="17sp"/>
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="dummy"-->
+        <!--android:id="@+id/test"-->
+        <!--android:layout_toRightOf="@+id/itemImage"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginLeft="100dp"-->
+        <!--android:textSize="17sp"/>-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:id="@+id/itemRate"
+        android:layout_toRightOf="@+id/itemImage"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="200dp"
+        android:textSize="17sp"/>
+
+    <!--<Button-->
+        <!--android:id="@+id/urlButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="42dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginLeft="67dp"-->
+        <!--android:layout_toRightOf="@+id/itemText"-->
+        <!--android:background="@drawable/custom_button"-->
+        <!--android:textColor="@color/tabindicatorcolor"-->
+        <!--android:text="rate history" />-->
+
+</RelativeLayout>

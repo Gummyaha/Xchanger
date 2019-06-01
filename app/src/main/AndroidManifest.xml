@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".CurrencyList" />
+        <activity android:name=".ExchangeRateList" />
 
         <meta-data
             android:name="preloaded_fonts"

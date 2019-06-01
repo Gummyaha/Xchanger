@@ -1,0 +1,118 @@
+package com.example.currencyapp;
+
+
+public class OurData  {
+
+
+    public static String[] title = new String[]{
+            "AUD",
+            "BGN",
+            "BRL",
+            "CAD",
+            "CHF",
+            "CNY",
+            "CZK",
+            "DKK",
+            "EUR",
+            "GBP",
+            "HKD",
+            "HRK",
+            "UF",
+            "IDR",
+            "ILS",
+            "INR",
+            "ISK",
+            "JPY",
+            "KRW",
+            "MYR",
+            "MXN",
+            "NOK",
+            "NZD",
+            "PHP",
+            "PLN",
+            "RON",
+            "RUB",
+            "SEK",
+            "SGD",
+            "THB",
+            "TRY",
+            "USD",
+            "ZAR"
+
+    };
+
+    public static int[] picturePath = new int[]{
+            R.drawable.aud,
+            R.drawable.bgn,
+            R.drawable.brl,
+            R.drawable.cad,
+            R.drawable.chf,
+            R.drawable.cny,
+            R.drawable.czk,
+            R.drawable.dkk,
+            R.drawable.eur,
+            R.drawable.gbp,
+            R.drawable.hkd,
+            R.drawable.hrk,
+            R.drawable.uf,
+            R.drawable.idr,
+            R.drawable.ils,
+            R.drawable.inr,
+            R.drawable.isk,
+            R.drawable.jpy,
+            R.drawable.krw,
+            R.drawable.myr,
+            R.drawable.mxn,
+            R.drawable.nok,
+            R.drawable.nzd,
+            R.drawable.ph,
+            R.drawable.pln,
+            R.drawable.ron,
+            R.drawable.rub,
+            R.drawable.sek,
+            R.drawable.sgd,
+            R.drawable.thb,
+            R.drawable.turkish,
+            R.drawable.usa,
+            R.drawable.zar
+    };
+
+
+    public static String[] ratePath = new String[]{
+            "AUD",
+            "BGN",
+            "BRL",
+            "CAD",
+            "CHF",
+            "CNY",
+            "CZK",
+            "DKK",
+            "EUR",
+            "GBP",
+            "HKD",
+            "HRK",
+            "UF",
+            "IDR",
+            "ILS",
+            "INR",
+            "ISK",
+            "JPY",
+            "KRW",
+            "MYR",
+            "MXN",
+            "NOK",
+            "NZD",
+            "PHP",
+            "PLN",
+            "RON",
+            "RUB",
+            "SEK",
+            "SGD",
+            "THB",
+            "TRY",
+            "USD",
+            "ZAR"
+
+    };
+
+}
