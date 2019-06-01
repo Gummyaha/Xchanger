@@ -33,13 +33,6 @@
         android:layout_marginEnd="104dp"
         android:layout_marginRight="104dp"
         android:layout_toRightOf="@id/arrow" />
-        <!--android:layout_alignTop="@+id/from_currency"-->
-        <!--android:layout_alignParentEnd="true"-->
-        <!--android:layout_alignParentRight="true"-->
-
-        <!--android:layout_marginTop="4dp"-->
-        <!--android:layout_marginEnd="100dp"-->
-        <!--android:layout_marginRight="100dp"-->
 
     <Button
         android:id="@+id/button7"
@@ -54,21 +47,6 @@
         android:background="@drawable/ic_delete_black_24dp"
         android:textColor="#FFF" />
 
-    <!--style="@style/director"-->
-    <!--
-<TextView
-    android:id="@+id/tvMovieTitle"
-    style="@style/movie_title"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
-
-<TextView
-    android:id="@+id/tvMovieDirectorFullName"
-    style="@style/movie_director"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
-
--->
 
 </RelativeLayout>
 

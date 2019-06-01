@@ -57,44 +57,6 @@ public class FragmentRates extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-//        //------ Dropdown
-//        dropdown1 = (Spinner) view.findViewById(R.id.baseSpinner);
-//        ArrayAdapter<CharSequence> mSortAdapter = new ArrayAdapter<CharSequence>(getActivity(), android.R.layout.simple_spinner_item, getResources()
-//                .getStringArray(R.array.currency));
-//        mSortAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        dropdown1.setAdapter(mSortAdapter);
-//
-//        dropdown1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parentView,
-//                                       View selectedItemView, int position, long id) {
-//                try {
-//
-//                    String select_base = parentView.getItemAtPosition(position).toString();
-//                    url = select_base;
-//                    test = (TextView)getView().findViewById(R.id.textView);
-//                    test.setText(String.valueOf(url));
-// //                       url = select_base;
-////
-////                    Intent intent = new Intent(getActivity(), RecyclerViewAdapter2.class);
-////                    intent.putExtra("Base",url);
-////                    getActivity().startActivity(intent);
-//
-//                }
-//                catch (Exception e) {
-//
-//                }
-//
-//
-//            }
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parentView) {
-//
-//            }
-//
-//        });
-
-
 
         return view;
 

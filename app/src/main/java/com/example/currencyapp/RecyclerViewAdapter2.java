@@ -27,8 +27,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-
 
 
 
@@ -41,10 +39,6 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter {
         this.context = context;
     }
 
-//    public RecyclerViewAdapter2(ArrayList<String> mUrl) {
-//        this.mUrl = mUrl;
-//        //this.item = item;
-//    }
 
     @NonNull
     @Override
@@ -81,19 +75,15 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter {
 
         //get data from OurData.java
         public void bindView(final int position){
+
             //get currency name
             mItemText.setText(OurData.title[position]);
+
             //get flag image
             mItemImage.setImageResource(OurData.picturePath[position]);
 
 
             //get exchange rate
-//            Intent intent = ((Activity) context).getIntent();
-//            final String base = intent.getStringExtra("Base");
-//
-//            mTest = (TextView)itemView.findViewById(R.id.test);
-//            mTest.setText(String.valueOf(base));
-
             url = currency_url+OurData.ratePath[position];
             JsonObjectRequest jur = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                 @Override
@@ -118,14 +108,6 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter {
             RequestQueue queue = Volley.newRequestQueue(context.getApplicationContext());
             queue.add(jur);
 
-            //history button
-//            mUrlButton.setOnClickListener(new View.OnClickListener() {
-//                public void onClick(View view) {
-//                    Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
-//                    intent.setData(Uri.parse(OurData.urlPath[position]));
-//                    context.startActivity(intent);
-//                }
-//            });
 
         }
 

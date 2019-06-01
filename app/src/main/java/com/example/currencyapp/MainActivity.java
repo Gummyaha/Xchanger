@@ -1,6 +1,5 @@
 package com.example.currencyapp;
 
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,7 +11,6 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
-//    private AppBarLayout appBarLayout;
     private ViewPager viewPager;
 
     @Override
