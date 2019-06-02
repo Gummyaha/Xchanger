@@ -6,9 +6,9 @@
     android:id="@+id/parent_layout">
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="30dp"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
         android:id="@+id/itemImage"
         android:src="@mipmap/ic_launcher"/>
 
@@ -19,8 +19,8 @@
         android:id="@+id/itemText"
         android:layout_toRightOf="@+id/itemImage"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="30dp"
-        android:textSize="17sp"/>
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:textSize="@dimen/_14sdp"/>
 
 
     <TextView
@@ -30,8 +30,8 @@
         android:id="@+id/itemRate"
         android:layout_toRightOf="@+id/itemImage"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="200dp"
-        android:textSize="17sp"/>
+        android:layout_marginLeft="@dimen/_140sdp"
+        android:textSize="@dimen/_14sdp"/>
 
 
 </RelativeLayout>

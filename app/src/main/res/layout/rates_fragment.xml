@@ -9,12 +9,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:text="Exchange Rates (EUR Base)"
         android:textColor="@color/fragmentTitle"
-        android:textSize="14dp"
+        android:textSize="@dimen/_12sdp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,11 +22,11 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
-        android:layout_width="418dp"
-        android:layout_height="529dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_450sdp"
+        android:layout_marginTop="@dimen/_50sdp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
