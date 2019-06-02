@@ -2,6 +2,7 @@ package com.example.currencyapp;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
@@ -28,6 +29,7 @@ public class FavoriteCurrency {
     @NonNull
     public int to_currency_position;
 
+    @Ignore
     public FavoriteCurrency(){
 
     }

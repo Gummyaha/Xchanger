@@ -10,7 +10,7 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-@Database(entities = {FavoriteCurrency.class}, version = 1)
+@Database(entities = {FavoriteCurrency.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase INSTANCE;
     private static final String DB_NAME = "appdatabse.db";

@@ -82,7 +82,7 @@ public class FragmentConvert extends Fragment {
             @Override
             public void onClick(View v) {
                 AddFavorite();
-                Toast.makeText(getActivity(), "Add in Favorite!", Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -152,9 +152,6 @@ public class FragmentConvert extends Fragment {
 
         return view;
     }
-    public void sendMessage(View view) {
-        // Do something in response to button
-    }
 
     void Get_Currency(){
 
@@ -221,6 +218,10 @@ public class FragmentConvert extends Fragment {
         FavoriteCurrency newFavorite = favoriteCurrencyDao.findFavorite(from_currency,to_currency);
         if (newFavorite == null) {
             favoriteViewModel.insert(favorite);
+            Toast.makeText(getActivity(), "Add in Favorite!", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(getActivity(), "Already existed!", Toast.LENGTH_SHORT).show();
         }
     }
 
