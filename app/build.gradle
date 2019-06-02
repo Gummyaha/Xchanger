@@ -41,13 +41,7 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:1.1.1"
 
     implementation 'com.intuit.sdp:sdp-android:1.0.5'
-//    implementation "android.arch.lifecycle:extensions:1.1.0"
-//    implementation "android.arch.lifecycle:viewmodel:1.1.0"
-//    implementation "android.arch.persistence.room:compiler:1.0.0-alpha9"
-//// Adds libraries defining annotations to only the compile classpath.
-//    compileOnly 'com.google.dagger:dagger:version-number'
-//    // Adds the annotation processor dependency to the annotation processor classpath.
-//    annotationProcessor 'com.google.dagger:dagger-compiler:version-number'
+
 
 
 }
